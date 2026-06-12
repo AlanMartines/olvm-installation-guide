@@ -31,6 +31,31 @@ Complete installation guide:
 oracle-linux-9/installation-guide.md
 ```
 
+## Validation Checklist
+
+Before considering the OLVM deployment complete, validate:
+
+* [ ] Oracle Linux updated successfully
+* [ ] Hostname configured correctly
+* [ ] FQDN resolving correctly
+* [ ] Required repositories enabled
+* [ ] `olvm-pre-check.py` executed successfully
+* [ ] OLVM Engine installed
+* [ ] `engine-setup` completed without errors
+* [ ] Engine service running
+* [ ] Web Administration Portal accessible
+* [ ] Keycloak accessible
+* [ ] Grafana accessible
+* [ ] Data Warehouse running
+* [ ] Firewall rules configured
+* [ ] Storage directories created
+* [ ] Storage permissions validated
+* [ ] Datacenter created
+* [ ] Cluster created
+* [ ] Host added successfully
+* [ ] Storage Domain active
+* [ ] Test VM created successfully
+
 ## Features Covered
 
 * Oracle Linux preparation
