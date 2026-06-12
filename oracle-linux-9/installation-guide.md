@@ -1,5 +1,3 @@
-Segue o bloco ajustado para `oracle-linux-9/installation-guide.md`, com dados genéricos e sem senha real.
-
 # Oracle Linux 9 - OLVM 4.5 Installation Guide
 
 ## Environment
@@ -18,7 +16,7 @@ Segue o bloco ajustado para `oracle-linux-9/installation-guide.md`, com dados ge
 
 ---
 
-# 1. Configure Hostname
+## 1. Configure Hostname
 
 ```bash
 hostnamectl set-hostname olvm-host
@@ -33,7 +31,7 @@ hostname -f
 
 ---
 
-# 2. Configure Hosts File
+## 2. Configure Hosts File
 
 ```bash
 cat << 'EOF' >> /etc/hosts
@@ -58,7 +56,7 @@ Expected result:
 
 ---
 
-# 3. Update Operating System
+## 3. Update Operating System
 
 ```bash
 dnf update -y
@@ -67,7 +65,7 @@ reboot
 
 ---
 
-# 4. Enable Required Repositories
+## 4. Enable Required Repositories
 
 ```bash
 dnf config-manager --enable ol9_baseos_latest
@@ -101,7 +99,7 @@ ol9_UEKR8
 
 ---
 
-# 5. Run OLVM Pre-Check
+## 5. Run OLVM Pre-Check
 
 ```bash
 olvm-pre-check.py
@@ -126,7 +124,7 @@ For production environments, external DNS resolution is recommended.
 
 ---
 
-# 6. Install Hosted Engine Packages
+## 6. Install Hosted Engine Packages
 
 ```bash
 dnf install -y ovirt-hosted-engine-setup ovirt-engine-appliance
@@ -134,7 +132,7 @@ dnf install -y ovirt-hosted-engine-setup ovirt-engine-appliance
 
 ---
 
-# 7. Deploy Self-Hosted Engine
+## 7. Deploy Self-Hosted Engine
 
 ```bash
 hosted-engine --deploy --4
@@ -213,7 +211,7 @@ Confirm the deployment and wait for the process to complete.
 
 ---
 
-# 8. Validate Hosted Engine Status
+## 8. Validate Hosted Engine Status
 
 ```bash
 hosted-engine --vm-status
@@ -228,7 +226,7 @@ systemctl status ovirt-ha-broker
 
 ---
 
-# 9. Access OLVM Portal
+## 9. Access OLVM Portal
 
 Administration Portal:
 
@@ -245,7 +243,7 @@ Password: <password-defined-during-hosted-engine-deployment>
 
 ---
 
-# 10. Post-Installation Validation
+## 10. Post-Installation Validation
 
 Validate:
 
@@ -265,30 +263,36 @@ Check that:
 
 ---
 
-# 11. Prepare Local Storage
+## 11. Prepare Local Storage
 
-## Create base storage structure
-```text
+Create base storage structure:
+
+```bash
 mkdir -p /home/vmstorage/{vms,iso,templates,backups,exports}
 ```
 
-## Assign ownership for OLVM/KVM
-```text
+Assign ownership for OLVM/KVM:
+
+```bash
 chown -R vdsm:kvm /home/vmstorage
 ```
 
-## Set permissions
-```text
+Set permissions:
+
+```bash
 chmod -R 0755 /home/vmstorage
 ```
 
-## Validate
-```text
+Validate:
+
+```bash
 ls -ld /home/vmstorage
 ls -lh /home/vmstorage
 ```
 
-# Installation Completed
+---
+
+## Installation Completed
 
 The OLVM Self-Hosted Engine deployment is now ready for:
 
