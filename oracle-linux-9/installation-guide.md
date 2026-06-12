@@ -265,6 +265,21 @@ Check that:
 
 ---
 
+# 11. Prepare Local Storage
+
+# Create base storage structure
+mkdir -p /home/vmstorage/{vms,iso,templates,backups,exports}
+
+# Assign ownership for OLVM/KVM
+chown -R vdsm:kvm /home/vmstorage
+
+# Set permissions
+chmod -R 0755 /home/vmstorage
+
+# Validate
+ls -ld /home/vmstorage
+ls -lh /home/vmstorage
+
 # Installation Completed
 
 The OLVM Self-Hosted Engine deployment is now ready for:
