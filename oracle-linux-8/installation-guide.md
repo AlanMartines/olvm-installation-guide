@@ -254,38 +254,18 @@ Password: <password-defined-during-engine-setup>
 
 # 10. Prepare Local Storage
 
-Create VM storage:
+# Create base storage structure
+mkdir -p /home/vmstorage/{vms,iso,templates,backups,exports}
 
-```bash
-mkdir -p /home/olvm-vms
-```
+# Assign ownership for OLVM/KVM
+chown -R vdsm:kvm /home/vmstorage
 
-Create ISO storage:
+# Set permissions
+chmod -R 0755 /home/vmstorage
 
-```bash
-mkdir -p /home/olvm-iso
-```
-
-Assign ownership:
-
-```bash
-chown -R vdsm:kvm /home/olvm-vms
-chown -R vdsm:kvm /home/olvm-iso
-```
-
-Set permissions:
-
-```bash
-chmod 0755 /home/olvm-vms
-chmod 0755 /home/olvm-iso
-```
-
-Validate:
-
-```bash
-ls -ld /home/olvm-vms
-ls -ld /home/olvm-iso
-```
+# Validate
+ls -ld /home/vmstorage
+ls -lh /home/vmstorage
 
 ---
 
