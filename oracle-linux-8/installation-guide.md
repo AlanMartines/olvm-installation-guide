@@ -13,7 +13,7 @@
 
 ---
 
-# 1. Configure Hostname
+## 1. Configure Hostname
 
 ```bash
 hostnamectl set-hostname olvm-engine
@@ -28,7 +28,7 @@ hostname -f
 
 ---
 
-# 2. Configure Hosts File
+## 2. Configure Hosts File
 
 ```bash
 cat << 'EOF' >> /etc/hosts
@@ -50,7 +50,7 @@ Expected result:
 
 ---
 
-# 3. Update Operating System
+## 3. Update Operating System
 
 ```bash
 dnf update -y
@@ -59,7 +59,7 @@ reboot
 
 ---
 
-# 4. Enable Required Repositories
+## 4. Enable Required Repositories
 
 ```bash
 dnf config-manager --enable ol8_baseos_latest
@@ -99,7 +99,7 @@ ol8_UEKR7
 
 ---
 
-# 5. Run OLVM Pre-Check
+## 5. Run OLVM Pre-Check
 
 ```bash
 olvm-pre-check.py
@@ -124,7 +124,7 @@ For production environments, external DNS resolution is recommended.
 
 ---
 
-# 6. Install OLVM Engine
+## 6. Install OLVM Engine
 
 ```bash
 dnf install -y ovirt-engine
@@ -132,7 +132,7 @@ dnf install -y ovirt-engine
 
 ---
 
-# 7. Run Engine Setup
+## 7. Run Engine Setup
 
 ```bash
 engine-setup
@@ -207,7 +207,7 @@ Installation may take several minutes.
 
 ---
 
-# 8. Validate Engine Services
+## 8. Validate Engine Services
 
 ```bash
 systemctl status ovirt-engine
@@ -223,7 +223,7 @@ systemctl restart ovirt-engine
 
 ---
 
-# 9. Access OLVM Portal
+## 9. Access OLVM Portal
 
 Administration Portal:
 
@@ -252,32 +252,36 @@ Password: <password-defined-during-engine-setup>
 
 ---
 
-# 10. Prepare Local Storage
+## 10. Prepare Local Storage
 
-## Create base storage structure
-```text
+Create base storage structure:
+
+```bash
 mkdir -p /home/vmstorage/{vms,iso,templates,backups,exports}
 ```
 
-## Assign ownership for OLVM/KVM
-```text
+Assign ownership for OLVM/KVM:
+
+```bash
 chown -R vdsm:kvm /home/vmstorage
 ```
 
-## Set permissions
-```text
+Set permissions:
+
+```bash
 chmod -R 0755 /home/vmstorage
 ```
 
-## Validate
-```text
+Validate:
+
+```bash
 ls -ld /home/vmstorage
 ls -lh /home/vmstorage
 ```
 
 ---
 
-# Installation Completed
+## Installation Completed
 
 The OLVM Engine is now ready for:
 
