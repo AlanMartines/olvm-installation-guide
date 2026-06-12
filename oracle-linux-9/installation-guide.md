@@ -267,18 +267,26 @@ Check that:
 
 # 11. Prepare Local Storage
 
-# Create base storage structure
+## Create base storage structure
+```text
 mkdir -p /home/vmstorage/{vms,iso,templates,backups,exports}
+```
 
-# Assign ownership for OLVM/KVM
+## Assign ownership for OLVM/KVM
+```text
 chown -R vdsm:kvm /home/vmstorage
+```
 
-# Set permissions
+## Set permissions
+```text
 chmod -R 0755 /home/vmstorage
+```
 
-# Validate
+## Validate
+```text
 ls -ld /home/vmstorage
 ls -lh /home/vmstorage
+```
 
 # Installation Completed
 
