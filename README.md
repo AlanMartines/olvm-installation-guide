@@ -4,32 +4,10 @@ Practical documentation for installing and configuring Oracle Linux Virtualizati
 
 This repository provides step-by-step installation guides for deploying OLVM on Oracle Linux environments.
 
-The goal is to offer a practical and reproducible installation reference, complementing Oracle's official documentation with real-world deployment examples.
-
-## Supported Versions
-
-| Oracle Linux   | OLVM Version | Status      |
-| -------------- | ------------ | ----------- |
-| Oracle Linux 8 | OLVM 4.5     | Supported   |
-| Oracle Linux 9 | OLVM 4.5     | In Progress |
-
 ## Installation Guides
 
-### Oracle Linux 8
-
-Complete installation guide:
-
-```text
-oracle-linux-8/installation-guide.md
-```
-
-### Oracle Linux 9
-
-Complete installation guide:
-
-```text
-oracle-linux-9/installation-guide.md
-```
+* [Oracle Linux 8 - OLVM 4.5 Installation Guide](oracle-linux-8/installation-guide.md)
+* [Oracle Linux 9 - OLVM 4.5 Installation Guide](oracle-linux-9/installation-guide.md)
 
 ## Validation Checklist
 
@@ -55,6 +33,13 @@ Before considering the OLVM deployment complete, validate:
 * [ ] Host added successfully
 * [ ] Storage Domain active
 * [ ] Test VM created successfully
+
+## Supported Versions
+
+| Oracle Linux   | OLVM Version | Status      |
+| -------------- | ------------ | ----------- |
+| Oracle Linux 8 | OLVM 4.5     | Supported   |
+| Oracle Linux 9 | OLVM 4.5     | In Progress |
 
 ## Features Covered
 
